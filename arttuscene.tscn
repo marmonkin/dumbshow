@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://ps88x1gst86f"]
+
+[ext_resource type="Texture2D" uid="uid://bbykcmwdkd0v1" path="res://sprites/spr_mask.png" id="1_05gt1"]
+[ext_resource type="Script" uid="uid://2woepee2ddns" path="res://mask.gd" id="2_mf5vj"]
+[ext_resource type="PackedScene" uid="uid://18lq0fmljcmi" path="res://player_guy.tscn" id="3_mf5vj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t2g76"]
+size = Vector2(14, 16)
+
+[node name="Root" type="Node2D" unique_id=669080154]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=613823721 node_paths=PackedStringArray("player")]
+position = Vector2(209, 91)
+collision_mask = 2
+script = ExtResource("2_mf5vj")
+player = NodePath("../sperm guy")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1489251550]
+texture = ExtResource("1_05gt1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=530614414]
+shape = SubResource("RectangleShape2D_t2g76")
+
+[node name="sperm guy" parent="." unique_id=1898993827 instance=ExtResource("3_mf5vj")]
+position = Vector2(124, 128)
