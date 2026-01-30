@@ -1,16 +1,20 @@
 [gd_scene format=3 uid="uid://18lq0fmljcmi"]
 
 [ext_resource type="Script" uid="uid://jjyv16k10xlf" path="res://player_guy.gd" id="1_3xnxb"]
+[ext_resource type="Texture2D" uid="uid://c4wpqg6e2nhpt" path="res://sprites/spr_player.png" id="2_lc21g"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_t8ajh"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lc21g"]
+radius = 3.0
+height = 18.0
 
 [node name="sperm guy" type="CharacterBody2D" unique_id=1898993827]
 motion_mode = 1
 script = ExtResource("1_3xnxb")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=847248945]
+texture = ExtResource("2_lc21g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1972641379]
-shape = SubResource("RectangleShape2D_t8ajh")
+shape = SubResource("CapsuleShape2D_lc21g")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=590779003]
