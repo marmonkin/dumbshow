@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://braiij1uykq53"]
 
 [ext_resource type="Texture2D" uid="uid://dq4g80ac0mca8" path="res://sprites/11454704.png" id="1_hbdb7"]
-[ext_resource type="Script" uid="uid://hg1j6m00ih86" path="res://enemy_spoder.gd" id="1_ncb36"]
+[ext_resource type="Script" uid="uid://hg1j6m00ih86" path="res://script/enemy_spoder.gd" id="1_ncb36"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_krhp6"]
 

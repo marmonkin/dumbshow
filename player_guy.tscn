@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://18lq0fmljcmi"]
 
-[ext_resource type="Script" uid="uid://jjyv16k10xlf" path="res://player_guy.gd" id="1_3xnxb"]
+[ext_resource type="Script" uid="uid://jjyv16k10xlf" path="res://script/player_guy.gd" id="1_3xnxb"]
 [ext_resource type="Texture2D" uid="uid://c4wpqg6e2nhpt" path="res://sprites/spr_player.png" id="2_lc21g"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lc21g"]
@@ -16,5 +16,3 @@ texture = ExtResource("2_lc21g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1972641379]
 shape = SubResource("CapsuleShape2D_lc21g")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=590779003]

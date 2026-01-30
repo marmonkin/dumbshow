@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dos1rpmugxa6b" path="res://sprites/spr_wall.png" id="2_pucm4"]
 [ext_resource type="Texture2D" uid="uid://npksa5pk40wh" path="res://sprites/spr_ground.png" id="3_6ansa"]
 [ext_resource type="PackedScene" uid="uid://braiij1uykq53" path="res://enemy_spoder.tscn" id="4_6ansa"]
+[ext_resource type="PackedScene" uid="uid://d2gur06lg1rk6" path="res://spawner.tscn" id="6_qbg1g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pnrsp"]
 texture = ExtResource("1_swj5i")
@@ -67,8 +68,11 @@ tile_map_data = PackedByteArray("AAAAAAAAAQAAAAAAAAABAAAAAQAAAAAAAAACAAAAAQAAAAA
 tile_set = SubResource("TileSet_vd4yp")
 
 [node name="sperm guy" parent="." unique_id=1898993827 instance=ExtResource("2_pnrsp")]
-position = Vector2(154, 118)
+unique_name_in_owner = true
+position = Vector2(160, 120)
 
-[node name="spoder" parent="." unique_id=347745082 node_paths=PackedStringArray("player") instance=ExtResource("4_6ansa")]
-position = Vector2(96, 102)
-player = NodePath("../sperm guy")
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1904602933]
+position = Vector2(160, 120)
+
+[node name="spawner" parent="." unique_id=2018637707 instance=ExtResource("6_qbg1g")]
+enemy_to_spawn = ExtResource("4_6ansa")

@@ -1,11 +1,10 @@
 extends CharacterBody2D
 
 
-@export var player : Node2D
-
 @export var SPEED = 150.0
 @export var MAX_ANGLE = 45.
 
+var player : Node2D
 var move_direction := Vector2.ZERO
 var move_timer := .3
 var wait_timer := 0.0

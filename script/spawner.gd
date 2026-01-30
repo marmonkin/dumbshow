@@ -1,0 +1,14 @@
+extends Node2D
+
+@export var enemy_to_spawn : PackedScene
+@export var amount = 0
+
+@onready var sperm_guy: CharacterBody2D = %"sperm guy"
+
+func _on_timer_timeout() -> void:
+	amount -= 1
+	var enemy = enemy_to_spawn.instantiate()
+	add_child(enemy)
+	enemy.player = sperm_guy
+	if amount == 0:
+		$Timer.stop()
