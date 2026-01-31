@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://braiij1uykq53"]
 
-[ext_resource type="Texture2D" uid="uid://dq4g80ac0mca8" path="res://sprites/11454704.png" id="1_hbdb7"]
 [ext_resource type="Script" uid="uid://hg1j6m00ih86" path="res://script/enemy_spoder.gd" id="1_ncb36"]
+[ext_resource type="Texture2D" uid="uid://cieqdnrkj17dl" path="res://sprites/spr_spider_strip4.png" id="2_ncb36"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_krhp6"]
 
@@ -14,8 +14,8 @@ script = ExtResource("1_ncb36")
 MAX_ANGLE = 15.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1339628685]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_hbdb7")
+texture = ExtResource("2_ncb36")
+hframes = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1467809402]
 shape = SubResource("CircleShape2D_krhp6")

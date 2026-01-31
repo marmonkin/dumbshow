@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dgeuehbwv8try"]
+
+[ext_resource type="Script" uid="uid://c82y3wr05ml8m" path="res://bg.gd" id="1_6wl3m"]
+[ext_resource type="Texture2D" uid="uid://dmq0x53375xa5" path="res://sprites/spr_bg.png" id="2_stere"]
+
+[node name="BG" type="Node2D" unique_id=894082075]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_6wl3m")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1029993367]
+modulate = Color(0, 0.25882354, 0.4117647, 1)
+offset_right = 1612.0
+offset_bottom = 1374.0
+texture = ExtResource("2_stere")
+stretch_mode = 1

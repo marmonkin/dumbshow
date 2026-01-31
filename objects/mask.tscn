@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dyvtpw5sjc3n1"]
 
 [ext_resource type="Script" uid="uid://2woepee2ddns" path="res://script/mask.gd" id="1_2ijcx"]
-[ext_resource type="Texture2D" uid="uid://bbykcmwdkd0v1" path="res://sprites/spr_mask.png" id="2_bvty1"]
+[ext_resource type="Texture2D" uid="uid://dwahgx1a201aa" path="res://sprites/spr_mask_strip6.png" id="2_2ijcx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bvty1"]
 
@@ -17,7 +17,8 @@ script = ExtResource("1_2ijcx")
 shape = SubResource("CircleShape2D_bvty1")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1536938587]
-texture = ExtResource("2_bvty1")
+texture = ExtResource("2_2ijcx")
+hframes = 6
 
 [node name="Area2D" type="Area2D" parent="." unique_id=397654721]
 collision_layer = 7
