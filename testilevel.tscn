@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://braiij1uykq53" path="res://enemy_spoder.tscn" id="4_6ansa"]
 [ext_resource type="Script" uid="uid://d2lcoiprvmq1l" path="res://camerascript.gd" id="4_417rw"]
 [ext_resource type="PackedScene" uid="uid://d2gur06lg1rk6" path="res://spawner.tscn" id="6_qbg1g"]
-[ext_resource type="PackedScene" uid="uid://1fjyk67lh6vh" path="res://pickupable.tscn" id="7_xh0bt"]
+[ext_resource type="PackedScene" path="res://pickupable.tscn" id="7_xh0bt"]
 [ext_resource type="Resource" uid="uid://dumoaubhxm8mm" path="res://items/box.tres" id="8_sxrkk"]
 [ext_resource type="PackedScene" uid="uid://dyvtpw5sjc3n1" path="res://objects/mask.tscn" id="9_6m24s"]
 
@@ -108,6 +108,7 @@ enemy_to_spawn = ExtResource("4_6ansa")
 [node name="Mask" parent="." unique_id=57425730 instance=ExtResource("9_6m24s")]
 position = Vector2(229, 80)
 collision_layer = 1
+collision_mask = 2
 
 [node name="pickupable" parent="." unique_id=273129074 instance=ExtResource("7_xh0bt")]
 position = Vector2(111, 144)
