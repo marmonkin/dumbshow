@@ -1,16 +1,28 @@
 extends Node2D
 
+@export var spawnspot: PackedScene = preload("res://objects/spawnspotter.tscn")
+
 var maxspawnamount := 4
 var spawnamount := 0
+var spawn_positions = [
+	Vector2(40, 120),
+	Vector2(160, 40),
+	Vector2(280, 120),
+	Vector2(160, 200)
+]
+var spawn_cooldown := 0.0
+var spawn_delay := 0.1
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	pass
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if (spawnamount < maxspawnamount):
-		await get_tree().create_timer(1).timeout
-		
+	spawn_cooldown -= delta
+	
+	if (spawnamount < maxspawnamount) && (spawn_cooldown <= 0.0):
+		var create = spawnspot.instantiate()
+		create.global_position = spawn_positions[spawnamount]
+		get_tree().current_scene.add_child(create)
+		print(spawn_positions[spawnamount])
 		spawnamount += 1
+		spawn_cooldown = spawn_delay

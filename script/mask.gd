@@ -10,19 +10,20 @@ var friction: float = 200.0
 var rotdir: float = 1
 
 func _physics_process(delta: float) -> void:
-	rotation += .04 * rotdir;
-	if knockback_timer > 0.0:
-		velocity = knockback
-		knockback_timer -= delta
-	else:
-		var dir = (playernode.global_position - global_position).normalized()
-		velocity += dir * acceleration * delta
-	
-	velocity = velocity.limit_length(max_speed)
-	
-	velocity = velocity.move_toward(Vector2.ZERO, friction * delta)
+	if playernode != null:
+		rotation += .04 * rotdir;
+		if knockback_timer > 0.0:
+			velocity = knockback
+			knockback_timer -= delta
+		else:
+			var dir = (playernode.global_position - global_position).normalized()
+			velocity += dir * acceleration * delta
 		
-	move_and_slide()
+		velocity = velocity.limit_length(max_speed)
+		
+		velocity = velocity.move_toward(Vector2.ZERO, friction * delta)
+			
+		move_and_slide()
 
 func apply_knockback(direction: Vector2, force: float, duration: float) -> void:
 	knockback = direction * force
