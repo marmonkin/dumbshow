@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://dkeeawksh10ge" path="res://script/item_spawn.gd" id="1_7tnuw"]
 [ext_resource type="Resource" uid="uid://dumoaubhxm8mm" path="res://items/box.tres" id="2_p4l5w"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_53gcx"]
+size = Vector2(276, 202)
+
 [node name="item_spawn" type="Node2D" unique_id=765518233]
 script = ExtResource("1_7tnuw")
 items = Array[Resource]([ExtResource("2_p4l5w")])
@@ -10,5 +13,10 @@ amount = 5
 
 [node name="Timer" type="Timer" parent="." unique_id=737328242]
 autostart = true
+
+[node name="Area2D" type="Area2D" parent="." unique_id=685172989]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=155796009]
+shape = SubResource("RectangleShape2D_53gcx")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

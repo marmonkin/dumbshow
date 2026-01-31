@@ -11,7 +11,10 @@
 [ext_resource type="Resource" uid="uid://dumoaubhxm8mm" path="res://items/box.tres" id="8_sxrkk"]
 [ext_resource type="PackedScene" uid="uid://dyvtpw5sjc3n1" path="res://objects/mask.tscn" id="9_6m24s"]
 [ext_resource type="PackedScene" uid="uid://244qt8j3nmbj" path="res://item_spawn.tscn" id="11_fpbc5"]
+<<<<<<< HEAD
 [ext_resource type="PackedScene" uid="uid://dgeuehbwv8try" path="res://objects/bg.tscn" id="12_845w3"]
+=======
+>>>>>>> ebe35de6c00a48f7e981558a864d1b3d5ba87edf
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pnrsp"]
 texture = ExtResource("1_swj5i")
@@ -124,9 +127,12 @@ unique_name_in_owner = true
 position = Vector2(162, 137)
 
 [node name="item_spawn" parent="." unique_id=765518233 instance=ExtResource("11_fpbc5")]
+<<<<<<< HEAD
 position = Vector2(160, 120)
 amount = 0
 
 [node name="BG" parent="." unique_id=894082075 instance=ExtResource("12_845w3")]
 z_index = -10
 position = Vector2(-64, -64)
+=======
+>>>>>>> ebe35de6c00a48f7e981558a864d1b3d5ba87edf

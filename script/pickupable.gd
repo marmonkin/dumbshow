@@ -7,8 +7,6 @@ func _ready() -> void:
 	%Sprite2D.texture = item_data.sprite
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.is_in_group("player"):
-		if !body.carry:
-			body.pickup_shit(item_data)
-			get_parent().remove_child(self)
-			queue_free()
+	if body.is_in_group("player") and !body.carry:
+		body.pickup_shit(item_data)
+		queue_free()
