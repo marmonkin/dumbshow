@@ -4,7 +4,7 @@ extends Node2D
 @export var items : Array [Resource]
 @export var amount = 0
 
-@onready var pickupable: PackedScene = preload("uid://1fjyk67lh6vh")
+@onready var pickupable: PackedScene = preload("uid://dm1fmidfi4qky")
 @onready var shape = $Area2D/CollisionShape2D.shape as RectangleShape2D
 
 
