@@ -19,6 +19,6 @@ texture = ExtResource("2_lc21g")
 shape = SubResource("CapsuleShape2D_lc21g")
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=2022276958]
-position = Vector2(0, -7)
+position = Vector2(0, -9)
 
 [node name="Sprite2D" type="Sprite2D" parent="Marker2D" unique_id=2053022181]
