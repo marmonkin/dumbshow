@@ -3,7 +3,7 @@ extends Node2D
 
 @export var items : Array [Resource]
 
-@onready var pickupable: PackedScene = preload("uid://1fjyk67lh6vh")
+@onready var pickupable: PackedScene = preload("res://pickupable.tscn")
 
 var amount = 0
 

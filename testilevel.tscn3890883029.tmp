@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://braiij1uykq53" path="res://enemy_spoder.tscn" id="4_6ansa"]
 [ext_resource type="Script" uid="uid://d2lcoiprvmq1l" path="res://camerascript.gd" id="4_417rw"]
 [ext_resource type="PackedScene" uid="uid://d2gur06lg1rk6" path="res://spawner.tscn" id="6_qbg1g"]
-[ext_resource type="PackedScene" uid="uid://dm1fmidfi4qky" path="res://pickupable.tscn" id="7_xh0bt"]
+[ext_resource type="PackedScene" path="res://pickupable.tscn" id="7_xh0bt"]
 [ext_resource type="Resource" uid="uid://dumoaubhxm8mm" path="res://items/box.tres" id="8_sxrkk"]
 [ext_resource type="PackedScene" uid="uid://dyvtpw5sjc3n1" path="res://objects/mask.tscn" id="9_6m24s"]
 [ext_resource type="PackedScene" path="res://item_spawn.tscn" id="11_fpbc5"]
