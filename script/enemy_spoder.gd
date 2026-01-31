@@ -4,9 +4,10 @@ extends CharacterBody2D
 @export var SPEED = 150.0
 @export var MAX_ANGLE = 45.
 
+@onready var player: Node2D = get_tree().get_nodes_in_group("player")[0]
+
 const CPU_PARTICLES_2D = preload("uid://dy7883pg6rnxb")
 
-var player : Node2D
 var move_direction := Vector2.ZERO
 var move_timer := .3
 var wait_timer := 0.0
