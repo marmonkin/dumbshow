@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://braiij1uykq53"]
+[gd_scene format=3 uid="uid://r320rwk2jhr1"]
 
 [ext_resource type="Script" uid="uid://hg1j6m00ih86" path="res://script/enemy_spoder.gd" id="1_ncb36"]
 [ext_resource type="Texture2D" uid="uid://cieqdnrkj17dl" path="res://sprites/spr_spider_strip4.png" id="2_ncb36"]
