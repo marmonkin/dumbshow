@@ -4,6 +4,8 @@ extends CharacterBody2D
 @onready var throw_origin: Marker2D = $Marker2D
 @onready var item_sprite: Sprite2D = $Marker2D/Sprite2D
 
+var gameover: PackedScene = preload("res://levels/gameover.tscn")
+#const gameover = preload("uid://cuevp8ji8x6nn")
 
 const SPEED = 100.0
 
@@ -32,4 +34,8 @@ func throw_shit():
 	get_tree().current_scene.add_child(projectile)
 	held_item = null
 	carry = false
-	
+
+func _on_area_2d_area_entered(area: Node2D) -> void:
+	if area.is_in_group("mask"):
+		get_tree().change_scene_to_packed(gameover)
+		print("AAAAAAA")
