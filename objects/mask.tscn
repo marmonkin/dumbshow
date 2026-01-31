@@ -3,8 +3,7 @@
 [ext_resource type="Script" uid="uid://2woepee2ddns" path="res://script/mask.gd" id="1_2ijcx"]
 [ext_resource type="Texture2D" uid="uid://bbykcmwdkd0v1" path="res://sprites/spr_mask.png" id="2_bvty1"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_t2g76"]
-size = Vector2(14, 16)
+[sub_resource type="CircleShape2D" id="CircleShape2D_bvty1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2ijcx"]
 radius = 15.033297
@@ -15,7 +14,7 @@ collision_mask = 5
 script = ExtResource("1_2ijcx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1272592314]
-shape = SubResource("RectangleShape2D_t2g76")
+shape = SubResource("CircleShape2D_bvty1")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1536938587]
 texture = ExtResource("2_bvty1")

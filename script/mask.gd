@@ -30,10 +30,10 @@ func apply_knockback(direction: Vector2, force: float, duration: float) -> void:
 	knockback_timer = duration
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body == playernode or body.is_in_group("box"):
+	if body.is_in_group("push"):
 		$"../Camera2D".shake(2)
 		var dir = (global_position - body.global_position).normalized()
-		var distance = global_position.distance_to(playernode.global_position)
+		var distance = global_position.distance_to(playernode.global_position) #was player.globalpos
 		apply_knockback(dir, distance*8, .5)
 	if body.is_in_group("box"):
 		body.queue_free()

@@ -6,7 +6,7 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qxf0c"]
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1996647956 groups=["box"]]
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1996647956 groups=["box", "push"]]
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_a85iw")
