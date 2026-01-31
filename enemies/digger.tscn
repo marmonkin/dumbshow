@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bknb5xyorjq8h"]
+
+[ext_resource type="Texture2D" uid="uid://b3r23br0t1b5w" path="res://sprites/spr_diglett.png" id="1_vle3j"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ktl0d"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bcmhi"]
+
+[node name="digger" type="CharacterBody2D" unique_id=1157193915]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=684705768]
+texture = ExtResource("1_vle3j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=203573338]
+shape = SubResource("CircleShape2D_ktl0d")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=158643389]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=159364345]
+shape = SubResource("CircleShape2D_bcmhi")

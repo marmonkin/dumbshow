@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://18lq0fmljcmi" path="res://player_guy.tscn" id="2_pnrsp"]
 [ext_resource type="Texture2D" uid="uid://dos1rpmugxa6b" path="res://sprites/spr_wall.png" id="2_pucm4"]
 [ext_resource type="Texture2D" uid="uid://npksa5pk40wh" path="res://sprites/spr_ground.png" id="3_6ansa"]
-[ext_resource type="PackedScene" uid="uid://braiij1uykq53" path="res://enemy_spoder.tscn" id="4_6ansa"]
+[ext_resource type="PackedScene" uid="uid://braiij1uykq53" path="res://enemies/enemy_spoder.tscn" id="4_6ansa"]
 [ext_resource type="Script" uid="uid://d2lcoiprvmq1l" path="res://camerascript.gd" id="4_417rw"]
 [ext_resource type="PackedScene" uid="uid://d2gur06lg1rk6" path="res://spawner.tscn" id="6_qbg1g"]
 [ext_resource type="PackedScene" uid="uid://dm1fmidfi4qky" path="res://pickupable.tscn" id="7_xh0bt"]
