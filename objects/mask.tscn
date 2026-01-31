@@ -20,7 +20,7 @@ shape = SubResource("CircleShape2D_bvty1")
 texture = ExtResource("2_2ijcx")
 hframes = 6
 
-[node name="Area2D" type="Area2D" parent="." unique_id=397654721 groups=["mask"]]
+[node name="Area2D" type="Area2D" parent="." unique_id=397654721 groups=["killplayer"]]
 collision_layer = 7
 collision_mask = 7
 

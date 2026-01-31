@@ -4,12 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://cieqdnrkj17dl" path="res://sprites/spr_spider_strip4.png" id="2_ncb36"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_krhp6"]
-radius = 3.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ncb36"]
-radius = 5.0
+radius = 11.0
 
-[node name="spoder" type="CharacterBody2D" unique_id=1465564554 groups=["enemy", "push", "stun"]]
+[node name="spoder" type="CharacterBody2D" unique_id=1465564554 groups=["box", "enemy", "push"]]
 collision_layer = 2
 script = ExtResource("1_ncb36")
 MAX_ANGLE = 15.0
@@ -22,11 +21,8 @@ hframes = 4
 shape = SubResource("CircleShape2D_krhp6")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=327874238 groups=["killplayer"]]
-collision_layer = 7
-collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1504682387]
 shape = SubResource("CircleShape2D_ncb36")
 
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
