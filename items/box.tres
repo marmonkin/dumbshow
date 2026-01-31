@@ -1,7 +1,11 @@
 [gd_resource type="Resource" script_class="ThrowableItem" format=3 uid="uid://dumoaubhxm8mm"]
 
 [ext_resource type="Script" uid="uid://ceimalr04ju1x" path="res://script/Throwables.gd" id="1_c2ypf"]
+[ext_resource type="PackedScene" uid="uid://cqrk8pnboahyo" path="res://projectile.tscn" id="1_xhm43"]
+[ext_resource type="Texture2D" uid="uid://c8voduta0fa4i" path="res://sprites/spr_box.png" id="2_nqu1l"]
 
 [resource]
 script = ExtResource("1_c2ypf")
+sprite = ExtResource("2_nqu1l")
+projectile_scene = ExtResource("1_xhm43")
 metadata/_custom_type_script = "uid://ceimalr04ju1x"

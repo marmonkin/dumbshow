@@ -6,9 +6,10 @@ extends Node2D
 @onready var sperm_guy: CharacterBody2D = %"sperm guy"
 
 func _on_timer_timeout() -> void:
+	if amount <= 0:
+		$Timer.stop()
+		pass
 	amount -= 1
 	var enemy = enemy_to_spawn.instantiate()
 	add_child(enemy)
 	enemy.player = sperm_guy
-	if amount == 0:
-		$Timer.stop()

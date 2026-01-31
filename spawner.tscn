@@ -4,7 +4,6 @@
 
 [node name="spawner" type="Node2D" unique_id=2018637707]
 script = ExtResource("1_yp5lu")
-amount = 4
 
 [node name="Timer" type="Timer" parent="." unique_id=988918195]
 autostart = true

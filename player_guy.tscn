@@ -7,7 +7,7 @@
 radius = 3.0
 height = 18.0
 
-[node name="sperm guy" type="CharacterBody2D" unique_id=1898993827]
+[node name="sperm guy" type="CharacterBody2D" unique_id=1898993827 groups=["player"]]
 motion_mode = 1
 script = ExtResource("1_3xnxb")
 

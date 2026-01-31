@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="ThrowableItem" format=3 uid="uid://dww46okn8i0bp"]
+
+[ext_resource type="Script" uid="uid://ceimalr04ju1x" path="res://script/Throwables.gd" id="1_1jqwa"]
+
+[resource]
+script = ExtResource("1_1jqwa")
+metadata/_custom_type_script = "uid://ceimalr04ju1x"

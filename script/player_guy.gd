@@ -19,6 +19,7 @@ func _input(event: InputEvent) -> void:
 
 func pickup_shit(item: ThrowableItem):
 	held_item = item
+	carry = true
 
 func throw_shit():
 	var projectile = held_item.projectile_scene.instantiate()
@@ -26,3 +27,5 @@ func throw_shit():
 	projectile.initialize((get_global_mouse_position() - global_position).normalized(),held_item)
 	get_tree().current_scene.add_child(projectile)
 	held_item = null
+	carry = false
+	

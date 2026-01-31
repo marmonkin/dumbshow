@@ -4,8 +4,9 @@ var direction: Vector2
 var item_data: ThrowableItem
 
 func initialize(dir: Vector2, data: ThrowableItem):
-	direction = dir
 	item_data = data
+	$Sprite2D.texture = item_data.sprite
+	direction = dir
 
 func _physics_process(delta):
 	position += direction * item_data.speed * delta
