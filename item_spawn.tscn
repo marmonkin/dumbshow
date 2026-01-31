@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://244qt8j3nmbj"]
+
+[ext_resource type="Script" uid="uid://dkeeawksh10ge" path="res://script/item_spawn.gd" id="1_7tnuw"]
+[ext_resource type="Resource" uid="uid://dumoaubhxm8mm" path="res://items/box.tres" id="2_p4l5w"]
+
+[node name="item_spawn" type="Node2D" unique_id=765518233]
+script = ExtResource("1_7tnuw")
+items = Array[Resource]([ExtResource("2_p4l5w")])
+
+[node name="Timer" type="Timer" parent="." unique_id=737328242]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
