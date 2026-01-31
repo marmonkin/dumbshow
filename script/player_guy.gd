@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 
 @onready var throw_origin: Marker2D = $Marker2D
+@onready var item_sprite: Sprite2D = $Marker2D/Sprite2D
+
 
 const SPEED = 100.0
 
@@ -19,9 +21,11 @@ func _input(event: InputEvent) -> void:
 
 func pickup_shit(item: ThrowableItem):
 	held_item = item
+	item_sprite.texture = item.sprite
 	carry = true
 
 func throw_shit():
+	item_sprite.texture = null
 	var projectile = held_item.projectile_scene.instantiate()
 	projectile.global_position = throw_origin.global_position
 	projectile.initialize((get_global_mouse_position() - global_position).normalized(),held_item)

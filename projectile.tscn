@@ -20,3 +20,8 @@ shape = SubResource("CircleShape2D_a85iw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="projectile" unique_id=1970370407]
 shape = SubResource("CircleShape2D_qxf0c")
+
+[node name="Timer" type="Timer" parent="." unique_id=1080692746]
+wait_time = 5.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

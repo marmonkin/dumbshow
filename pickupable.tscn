@@ -9,6 +9,7 @@ size = Vector2(12, 12)
 script = ExtResource("1_ivmqe")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1470417229]
+unique_name_in_owner = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=542786736]
 shape = SubResource("RectangleShape2D_vr4cj")
