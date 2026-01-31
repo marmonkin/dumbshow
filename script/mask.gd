@@ -39,7 +39,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		var playerdir = (playernode.global_position - global_position).normalized()
 		var lerpdir = lerp(dir, playerdir, .5).normalized()
 		#var distance = global_position.distance_to(playernode.global_position) #was player.globalpos
-		apply_knockback(lerpdir, 200, .25)
+		apply_knockback(lerpdir, 100, .5)
 	else:
 		var dir = (global_position - body.global_position).normalized()
 		var distance = global_position.distance_to(playernode.global_position) #was player.globalpos
