@@ -11,6 +11,8 @@ radius = 11.0
 [node name="spoder" type="CharacterBody2D" unique_id=1465564554 groups=["box", "enemy", "push"]]
 collision_layer = 2
 script = ExtResource("1_ncb36")
+SPEED = null
+MAX_ANGLE = 15.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1339628685]
 texture = ExtResource("2_ncb36")

@@ -5,8 +5,8 @@ extends CharacterBody2D
 @export var MAX_ANGLE = 45.
 
 const CPU_PARTICLES_2D = preload("uid://dy7883pg6rnxb")
+@onready var player: Node2D = get_tree().get_nodes_in_group("player")[0]
 
-var player : Node2D
 var move_direction := Vector2.ZERO
 var move_timer := .3
 var wait_timer := 0.0
@@ -30,7 +30,7 @@ func _physics_process(delta: float) -> void:
 			
 			
 func start_move() -> void:
-	var to_player := (player.global_position - global_position).normalized()
+	var to_player = (player.global_position - global_position).normalized()
 
 	var angle_offset := deg_to_rad(randf_range(-MAX_ANGLE, MAX_ANGLE))
 	move_direction = to_player.rotated(angle_offset)

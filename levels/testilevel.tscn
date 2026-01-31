@@ -4,12 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://dos1rpmugxa6b" path="res://sprites/spr_wall.png" id="2_7u5sd"]
 [ext_resource type="Texture2D" uid="uid://npksa5pk40wh" path="res://sprites/spr_ground.png" id="3_t1v5k"]
 [ext_resource type="Script" uid="uid://d2lcoiprvmq1l" path="res://camerascript.gd" id="4_pv8wp"]
-[ext_resource type="PackedScene" uid="uid://d2gur06lg1rk6" path="res://spawner.tscn" id="5_3dlol"]
-[ext_resource type="PackedScene" uid="uid://braiij1uykq53" path="res://enemy_spoder.tscn" id="6_30kfm"]
 [ext_resource type="PackedScene" uid="uid://dyvtpw5sjc3n1" path="res://objects/mask.tscn" id="7_5dfco"]
 [ext_resource type="PackedScene" uid="uid://dm1fmidfi4qky" path="res://pickupable.tscn" id="8_ef7ch"]
 [ext_resource type="Resource" uid="uid://dumoaubhxm8mm" path="res://items/box.tres" id="9_pcny8"]
 [ext_resource type="PackedScene" uid="uid://18lq0fmljcmi" path="res://player_guy.tscn" id="10_24j45"]
+[ext_resource type="PackedScene" uid="uid://di66qoy6qts7b" path="res://objects/spawner.tscn" id="11_50xcf"]
 [ext_resource type="PackedScene" uid="uid://244qt8j3nmbj" path="res://item_spawn.tscn" id="11_a3kxr"]
 [ext_resource type="PackedScene" uid="uid://dgeuehbwv8try" path="res://objects/bg.tscn" id="12_lys4r"]
 
@@ -107,10 +106,6 @@ metadata/_edit_lock_ = true
 position = Vector2(160, 120)
 script = ExtResource("4_pv8wp")
 
-[node name="spawner" parent="." unique_id=2018637707 instance=ExtResource("5_3dlol")]
-position = Vector2(57, 54)
-enemy_to_spawn = ExtResource("6_30kfm")
-
 [node name="Mask" parent="." unique_id=57425730 instance=ExtResource("7_5dfco")]
 position = Vector2(160, 32)
 collision_mask = 3
@@ -130,3 +125,5 @@ position = Vector2(160, 120)
 modulate = Color(0, 0.25882354, 0.4117647, 1)
 z_index = -10
 position = Vector2(-64, -64)
+
+[node name="spawner" parent="." unique_id=2098009316 instance=ExtResource("11_50xcf")]
