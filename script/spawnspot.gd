@@ -5,6 +5,7 @@ var ENEMY_SPODER = preload("uid://braiij1uykq53")
 func _ready() -> void:
 	modulate.a = 0.0
 	scale = Vector2.ZERO
+	add_to_group("spawnspot")
 	
 	var tween = create_tween()
 
