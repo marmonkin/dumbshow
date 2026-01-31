@@ -6,6 +6,7 @@
 size = Vector2(12, 12)
 
 [node name="box" type="RigidBody2D" unique_id=1098420302 groups=["box"]]
+z_index = -1
 gravity_scale = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1700738603]

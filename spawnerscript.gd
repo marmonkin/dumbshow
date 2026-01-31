@@ -15,8 +15,10 @@ var spawn_delay := 0.1
 
 func _process(delta: float) -> void:
 	spawn_cooldown -= delta
-	
-	if (spawnamount < maxspawnamount) && (spawn_cooldown <= 0.0):
+
+	var enemies_alive = get_tree().get_nodes_in_group("enemy").size()
+
+	if (enemies_alive == 0) and (spawnamount < maxspawnamount) and (spawn_cooldown <= 0.0):
 		var create = spawnspot.instantiate()
 		create.global_position = spawn_positions[spawnamount]
 		get_tree().current_scene.add_child(create)

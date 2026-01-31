@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://r320rwk2jhr1"]
+[gd_scene format=3 uid="uid://braiij1uykq53"]
 
 [ext_resource type="Script" uid="uid://hg1j6m00ih86" path="res://script/enemy_spoder.gd" id="1_ncb36"]
 [ext_resource type="Texture2D" uid="uid://cieqdnrkj17dl" path="res://sprites/spr_spider_strip4.png" id="2_ncb36"]
@@ -11,6 +11,8 @@ radius = 11.0
 [node name="spoder" type="CharacterBody2D" unique_id=1465564554 groups=["box", "enemy", "push"]]
 collision_layer = 2
 script = ExtResource("1_ncb36")
+SPEED = null
+MAX_ANGLE = 15.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1339628685]
 texture = ExtResource("2_ncb36")
