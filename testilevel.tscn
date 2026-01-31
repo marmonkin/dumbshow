@@ -9,9 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://d2gur06lg1rk6" path="res://spawner.tscn" id="6_qbg1g"]
 [ext_resource type="PackedScene" uid="uid://dm1fmidfi4qky" path="res://pickupable.tscn" id="7_xh0bt"]
 [ext_resource type="Resource" uid="uid://dumoaubhxm8mm" path="res://items/box.tres" id="8_sxrkk"]
-[ext_resource type="PackedScene" uid="uid://dyvtpw5sjc3n1" path="res://objects/mask.tscn" id="9_6m24s"]
 [ext_resource type="PackedScene" uid="uid://244qt8j3nmbj" path="res://item_spawn.tscn" id="11_fpbc5"]
 [ext_resource type="PackedScene" uid="uid://dgeuehbwv8try" path="res://objects/bg.tscn" id="12_845w3"]
+[ext_resource type="PackedScene" uid="uid://c4k0tnpartbd" path="res://enemies/batter.tscn" id="13_gvc05"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pnrsp"]
 texture = ExtResource("1_swj5i")
@@ -111,10 +111,6 @@ script = ExtResource("4_417rw")
 position = Vector2(57, 54)
 enemy_to_spawn = ExtResource("4_6ansa")
 
-[node name="Mask" parent="." unique_id=57425730 instance=ExtResource("9_6m24s")]
-position = Vector2(229, 80)
-collision_mask = 3
-
 [node name="pickupable" parent="." unique_id=273129074 instance=ExtResource("7_xh0bt")]
 position = Vector2(111, 144)
 item_data = ExtResource("8_sxrkk")
@@ -129,3 +125,6 @@ position = Vector2(160, 120)
 [node name="BG" parent="." unique_id=894082075 instance=ExtResource("12_845w3")]
 z_index = -10
 position = Vector2(-64, -64)
+
+[node name="batter" parent="." unique_id=1157193915 instance=ExtResource("13_gvc05")]
+position = Vector2(119, 53)

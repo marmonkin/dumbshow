@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://braiij1uykq53"]
 
-[ext_resource type="Script" uid="uid://hg1j6m00ih86" path="res://script/enemy_spoder.gd" id="1_ncb36"]
-[ext_resource type="Texture2D" uid="uid://cieqdnrkj17dl" path="res://sprites/spr_spider_strip4.png" id="2_ncb36"]
+[ext_resource type="Script" uid="uid://hg1j6m00ih86" path="res://script/enemy_spoder.gd" id="1_t6rx1"]
+[ext_resource type="Texture2D" uid="uid://cieqdnrkj17dl" path="res://sprites/spr_spider_strip4.png" id="2_vwv3x"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_krhp6"]
 radius = 3.0
@@ -11,11 +11,11 @@ radius = 5.0
 
 [node name="spoder" type="CharacterBody2D" unique_id=1465564554 groups=["enemy", "push", "stun"]]
 collision_layer = 2
-script = ExtResource("1_ncb36")
+script = ExtResource("1_t6rx1")
 MAX_ANGLE = 15.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1339628685]
-texture = ExtResource("2_ncb36")
+texture = ExtResource("2_vwv3x")
 hframes = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1467809402]
@@ -28,5 +28,4 @@ collision_mask = 7
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1504682387]
 shape = SubResource("CircleShape2D_ncb36")
 
-[connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
