@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_bvty1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2ijcx"]
-radius = 15.033297
+radius = 11.0
 
 [node name="Mask" type="CharacterBody2D" unique_id=57425730 groups=["mask"]]
 collision_layer = 2
