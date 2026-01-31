@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://npksa5pk40wh" path="res://sprites/spr_ground.png" id="3_6ansa"]
 [ext_resource type="PackedScene" uid="uid://braiij1uykq53" path="res://enemy_spoder.tscn" id="4_6ansa"]
 [ext_resource type="PackedScene" uid="uid://d2gur06lg1rk6" path="res://spawner.tscn" id="6_qbg1g"]
+[ext_resource type="PackedScene" uid="uid://culgoye6xjexj" path="res://box.tscn" id="7_xh0bt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pnrsp"]
 texture = ExtResource("1_swj5i")
@@ -76,3 +77,6 @@ position = Vector2(160, 120)
 
 [node name="spawner" parent="." unique_id=2018637707 instance=ExtResource("6_qbg1g")]
 enemy_to_spawn = ExtResource("4_6ansa")
+
+[node name="box" parent="." unique_id=1098420302 instance=ExtResource("7_xh0bt")]
+position = Vector2(98, 144)
