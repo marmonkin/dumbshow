@@ -2,23 +2,21 @@
 
 [ext_resource type="Script" uid="uid://b28d0uvffsxr3" path="res://script/projectile.gd" id="1_a85iw"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_a85iw"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_a85iw"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_akgne"]
-size = Vector2(6, 6)
+[sub_resource type="CircleShape2D" id="CircleShape2D_qxf0c"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1996647956 groups=["box"]]
-collision_mask = 3
+collision_layer = 4
+collision_mask = 2
 script = ExtResource("1_a85iw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1902696104]
-shape = SubResource("RectangleShape2D_a85iw")
+shape = SubResource("CircleShape2D_a85iw")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1655563020]
 
 [node name="projectile" type="Area2D" parent="." unique_id=1563408398]
-collision_layer = 2
-collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="projectile" unique_id=1970370407]
-shape = SubResource("RectangleShape2D_akgne")
+shape = SubResource("CircleShape2D_qxf0c")

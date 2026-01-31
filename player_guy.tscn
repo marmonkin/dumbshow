@@ -5,7 +5,7 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lc21g"]
 radius = 3.0
-height = 18.0
+height = 12.0
 
 [node name="player_guy" type="CharacterBody2D" unique_id=1898993827 groups=["player"]]
 collision_mask = 3
@@ -19,3 +19,4 @@ texture = ExtResource("2_lc21g")
 shape = SubResource("CapsuleShape2D_lc21g")
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=2022276958]
+position = Vector2(0, -7)
