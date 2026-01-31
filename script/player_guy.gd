@@ -35,7 +35,10 @@ func throw_shit():
 	held_item = null
 	carry = false
 
+func do_gameover():
+	get_tree().change_scene_to_packed(gameover)
+
 func _on_area_2d_area_entered(area: Node2D) -> void:
 	if area.is_in_group("killplayer"):
-		get_tree().change_scene_to_packed(gameover)
+		call_deferred("do_gameover")
 		print("AAAAAAAAAAAA")

@@ -7,7 +7,6 @@ extends CharacterBody2D
 @onready var player: Node2D = get_tree().get_nodes_in_group("player")[0]
 
 const CPU_PARTICLES_2D = preload("uid://dy7883pg6rnxb")
-@onready var player: Node2D = get_tree().get_nodes_in_group("player")[0]
 
 var move_direction := Vector2.ZERO
 var move_timer := .3
