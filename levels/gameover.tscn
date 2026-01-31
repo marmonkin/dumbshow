@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cuevp8ji8x6nn"]
 
 [ext_resource type="PackedScene" uid="uid://dgeuehbwv8try" path="res://objects/bg.tscn" id="1_acgp2"]
+[ext_resource type="Script" uid="uid://bkm04r2sutkbe" path="res://levels/key_r.gd" id="2_owe7a"]
 
 [node name="Gameover" type="Node2D" unique_id=309443611]
 
@@ -21,3 +22,6 @@ offset_right = 619.0
 offset_bottom = 151.0
 text = "LMAOOOOOOOOOOOOOOOOOOOOOOOOO"
 horizontal_alignment = 1
+
+[node name="rkey" type="Node2D" parent="." unique_id=933985024]
+script = ExtResource("2_owe7a")
