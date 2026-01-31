@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dy7883pg6rnxb"]
 
-[ext_resource type="Script" uid="uid://bsdvmoj1kq67e" path="res://particle/cpu_particles_2d.gd" id="1_4h6sl"]
+[ext_resource type="Script" uid="uid://bsdvmoj1kq67e" path="res://particle/blood.gd" id="1_4h6sl"]
 
 [node name="CPUParticles2D" type="CPUParticles2D" unique_id=1858672417]
 emitting = false

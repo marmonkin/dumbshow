@@ -44,9 +44,7 @@ func die() -> void:
 	blood.global_position = global_position
 	
 	get_tree().current_scene.add_child(blood)
-
 	blood.emitting = true
-
 	queue_free()
 	
 func stun():
@@ -55,5 +53,6 @@ func stun():
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.is_in_group("box") and body != self:
-		body.queue_free()
+	if body.is_in_group("box"):
+		stun()
+		body.die()

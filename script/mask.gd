@@ -61,7 +61,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		var distance = global_position.distance_to(playernode.global_position) #was player.globalpos
 		apply_knockback(dir, distance*4, .25)
 
-	if body.is_in_group("enemy") and body.has_method("die"):
+	if body.has_method("die"):
 		body.die()
 	elif body.is_in_group("box"):
 		body.queue_free()
