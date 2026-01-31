@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://babox552lkcwd"]
+
+[ext_resource type="Texture2D" uid="uid://ckjhtw2v6vqxs" path="res://sprites/spr_cross.png" id="1_h2ib7"]
+[ext_resource type="Script" uid="uid://cd766x1bff0d2" path="res://script/spawnspot.gd" id="2_1e5rq"]
+
+[node name="spawnspotter" type="Node2D" unique_id=1836241124]
+
+[node name="spawnspot" type="Sprite2D" parent="." unique_id=122525186]
+z_index = -1
+texture_filter = 1
+texture = ExtResource("1_h2ib7")
+script = ExtResource("2_1e5rq")

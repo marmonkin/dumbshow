@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://ps88x1gst86f"]
+
+[ext_resource type="PackedScene" uid="uid://dyvtpw5sjc3n1" path="res://objects/mask.tscn" id="1_mf5vj"]
+[ext_resource type="PackedScene" uid="uid://18lq0fmljcmi" path="res://player_guy.tscn" id="3_mf5vj"]
+[ext_resource type="Texture2D" uid="uid://bu6kal6r0tx0q" path="res://sprites/spr_maskspawn_strip14.png" id="3_t2g76"]
+[ext_resource type="Script" uid="uid://cd766x1bff0d2" path="res://script/spawnspot.gd" id="4_t2g76"]
+[ext_resource type="Script" uid="uid://wf8o8858eqer" path="res://spawnerscript.gd" id="5_qe6nu"]
+
+[sub_resource type="Animation" id="Animation_t2g76"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_qe6nu"]
+resource_name = "spawnanim"
+length = 0.26666668
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(5.9604645e-08, 0.03333336, 0.06666672, 0.100000024, 0.13333333, 0.16666663, 0.19999993, 0.23333323),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 3, 5, 7, 9, 11, 13]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0idbu"]
+_data = {
+&"RESET": SubResource("Animation_t2g76"),
+&"spawnanim": SubResource("Animation_qe6nu")
+}
+
+[node name="Root" type="Node2D" unique_id=669080154]
+
+[node name="Mask" parent="." unique_id=57425730 instance=ExtResource("1_mf5vj")]
+texture_filter = 1
+position = Vector2(124, 128)
+
+[node name="sperm guy" parent="." unique_id=1898993827 instance=ExtResource("3_mf5vj")]
+position = Vector2(188, 103)
+
+[node name="spawnspot" type="Sprite2D" parent="." unique_id=851480705]
+z_index = -1
+texture_filter = 1
+position = Vector2(264, 116)
+texture = ExtResource("3_t2g76")
+hframes = 14
+script = ExtResource("4_t2g76")
+
+[node name="spawnanim" type="AnimationPlayer" parent="spawnspot" unique_id=743755458]
+libraries/ = SubResource("AnimationLibrary_0idbu")
+speed_scale = 0.2
+
+[node name="spawner" type="Node2D" parent="." unique_id=892491561 node_paths=PackedStringArray("spawnspot")]
+position = Vector2(119.938156, 47.455025)
+script = ExtResource("5_qe6nu")
+spawnspot = NodePath("../spawnspot")
