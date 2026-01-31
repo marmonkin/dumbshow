@@ -112,16 +112,16 @@ position = Vector2(57, 54)
 enemy_to_spawn = ExtResource("6_30kfm")
 
 [node name="Mask" parent="." unique_id=57425730 instance=ExtResource("7_5dfco")]
-position = Vector2(229, 80)
+position = Vector2(160, 32)
 collision_mask = 3
 
 [node name="pickupable" parent="." unique_id=273129074 instance=ExtResource("8_ef7ch")]
-position = Vector2(111, 144)
+position = Vector2(160, 208)
 item_data = ExtResource("9_pcny8")
 
 [node name="player_guy" parent="." unique_id=1898993827 groups=["push"] instance=ExtResource("10_24j45")]
 unique_name_in_owner = true
-position = Vector2(162, 137)
+position = Vector2(160, 120)
 
 [node name="item_spawn" parent="." unique_id=765518233 instance=ExtResource("11_a3kxr")]
 position = Vector2(160, 120)
