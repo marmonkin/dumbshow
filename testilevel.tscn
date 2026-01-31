@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://d2gur06lg1rk6" path="res://spawner.tscn" id="6_qbg1g"]
 [ext_resource type="PackedScene" uid="uid://1fjyk67lh6vh" path="res://pickupable.tscn" id="7_xh0bt"]
 [ext_resource type="Resource" uid="uid://dumoaubhxm8mm" path="res://items/box.tres" id="8_sxrkk"]
+[ext_resource type="PackedScene" uid="uid://dyvtpw5sjc3n1" path="res://objects/mask.tscn" id="9_6m24s"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pnrsp"]
 texture = ExtResource("1_swj5i")
@@ -94,10 +95,6 @@ collision_enabled = false
 tile_map_data = PackedByteArray("AAAAAAAAAQAAAAAAAAABAAAAAQAAAAAAAAACAAAAAQAAAAAAAAADAAAAAQAAAAAAAAAEAAAAAQAAAAAAAAAFAAAAAQAAAAAAAAAGAAAAAQAAAAAAAAAHAAAAAQAAAAAAAAAIAAAAAQAAAAAAAAAJAAAAAQAAAAAAAAAKAAAAAQAAAAAAAAALAAAAAQAAAAAAAAAMAAAAAQAAAAAAAAANAAAAAQAAAAAAAAAOAAAAAQAAAAAAAAAPAAAAAQAAAAAAAAAQAAAAAQAAAAAAAAARAAAAAQAAAAAAAAASAAAAAQAAAAAAAAATAAAAAQAAAAAAAAATAAEAAQAAAAAAAAATAAIAAQAAAAAAAAATAAMAAQAAAAAAAAATAAQAAQAAAAAAAAATAAUAAQAAAAAAAAATAAYAAQAAAAAAAAATAAcAAQAAAAAAAAATAAgAAQAAAAAAAAATAAkAAQAAAAAAAAATAAoAAQAAAAAAAAATAAsAAQAAAAAAAAATAAwAAQAAAAAAAAATAA0AAQAAAAAAAAATAA4AAQAAAAAAAAASAA4AAQABAAEAAAARAA4AAQABAAEAAAAQAA4AAQABAAEAAAAPAA4AAQABAAEAAAAOAA4AAQABAAEAAAANAA4AAQABAAEAAAAMAA4AAQABAAEAAAALAA4AAQABAAEAAAAKAA4AAQABAAEAAAAJAA4AAQABAAEAAAAIAA4AAQABAAEAAAAHAA4AAQABAAEAAAAGAA4AAQABAAEAAAAFAA4AAQABAAEAAAAEAA4AAQABAAEAAAADAA4AAQABAAEAAAACAA4AAQABAAEAAAABAA4AAQABAAEAAAAAAA4AAQABAAEAAAAAAA0AAQABAAEAAAAAAAEAAQABAAEAAAAAAAIAAQABAAEAAAAAAAMAAQABAAEAAAAAAAQAAQABAAEAAAAAAAUAAQABAAEAAAAAAAYAAQABAAEAAAAAAAcAAQABAAEAAAAAAAgAAQABAAEAAAAAAAkAAQABAAEAAAAAAAoAAQABAAEAAAAAAAsAAQABAAEAAAAAAAwAAQABAAEAAAA=")
 tile_set = SubResource("TileSet_vd4yp")
 
-[node name="sperm guy" parent="." unique_id=1898993827 instance=ExtResource("2_pnrsp")]
-unique_name_in_owner = true
-position = Vector2(160, 120)
-
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1904602933]
 position = Vector2(160, 120)
 
@@ -105,6 +102,13 @@ position = Vector2(160, 120)
 position = Vector2(57, 54)
 enemy_to_spawn = ExtResource("4_6ansa")
 
+[node name="Mask" parent="." unique_id=57425730 instance=ExtResource("9_6m24s")]
+position = Vector2(229, 80)
+
 [node name="pickupable" parent="." unique_id=273129074 instance=ExtResource("7_xh0bt")]
-position = Vector2(112, 116)
+position = Vector2(111, 144)
 item_data = ExtResource("8_sxrkk")
+
+[node name="player_guy" parent="." unique_id=1898993827 instance=ExtResource("2_pnrsp")]
+unique_name_in_owner = true
+position = Vector2(162, 137)

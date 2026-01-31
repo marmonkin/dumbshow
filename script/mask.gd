@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@onready var playernode: CharacterBody2D = get_parent().get_node("sperm guy")
+@onready var playernode: CharacterBody2D = %player_guy
 
 var knockback: Vector2 = Vector2.ZERO
 var knockback_timer: float = 0.0
@@ -29,10 +29,12 @@ func apply_knockback(direction: Vector2, force: float, duration: float) -> void:
 	knockback_timer = duration
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body == playernode:
+	if body == playernode or body.is_in_group("box"):
 		var dir = (global_position - body.global_position).normalized()
 		var distance = global_position.distance_to(playernode.global_position)
 		apply_knockback(dir, distance*8, .5)
+	if body.is_in_group("box"):
+		body.queue_free()
 	if rotdir == 1:
 		rotdir = -1
 	else:
