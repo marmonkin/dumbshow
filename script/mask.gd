@@ -31,12 +31,23 @@ func apply_knockback(direction: Vector2, force: float, duration: float) -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("push"):
+		
 		$"../Camera2D".shake(2)
+		
+	if body.is_in_group("wall"):
+		var dir = (Vector2(160,120) - global_position).normalized()
+		var playerdir = (playernode.global_position - global_position).normalized()
+		var lerpdir = lerp(dir, playerdir, .5).normalized()
+		#var distance = global_position.distance_to(playernode.global_position) #was player.globalpos
+		apply_knockback(lerpdir, 100, .5)
+	else:
 		var dir = (global_position - body.global_position).normalized()
 		var distance = global_position.distance_to(playernode.global_position) #was player.globalpos
-		apply_knockback(dir, distance*8, .5)
+		apply_knockback(dir, distance*4, .25)
+
 	if body.is_in_group("box"):
 		body.queue_free()
+
 	if rotdir == 1:
 		rotdir = -1
 	else:

@@ -27,6 +27,7 @@ box=""
 player=""
 mask=""
 push="ninja"
+wall=""
 
 [input]
 
