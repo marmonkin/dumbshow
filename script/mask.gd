@@ -41,11 +41,14 @@ func _physics_process(delta: float) -> void:
 func apply_knockback(direction: Vector2, force: float, duration: float) -> void:
 	knockback = direction * force
 	knockback_timer = duration
+	
+
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("push"):
 		
 		$"../Camera2D".shake(2)
+		Hitstop.freeze_frames(10)
 		
 	if body.is_in_group("wall"):
 		var dir = (Vector2(160,120) - global_position).normalized()
