@@ -4,6 +4,8 @@ extends CharacterBody2D
 @export var SPEED = 150.0
 @export var MAX_ANGLE = 45.
 
+const CPU_PARTICLES_2D = preload("uid://dy7883pg6rnxb")
+
 var player : Node2D
 var move_direction := Vector2.ZERO
 var move_timer := .3
@@ -35,3 +37,14 @@ func start_move() -> void:
 
 	move_timer = randf_range(.2, .5)
 	wait_timer = randf_range(.8, 1.5)
+
+
+func die() -> void:
+	var blood = CPU_PARTICLES_2D.instantiate()
+	blood.global_position = global_position
+	
+	get_tree().current_scene.add_child(blood)
+
+	blood.emitting = true
+
+	queue_free()

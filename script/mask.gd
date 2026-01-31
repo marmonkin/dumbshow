@@ -59,7 +59,10 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		apply_knockback(dir, distance*4, .25)
 
 	if body.is_in_group("box"):
-		body.queue_free()
+		if body.has_method("die"):
+			body.die()
+		else:
+			body.queue_free()
 
 	if rotdir == 1:
 		rotdir = -1
