@@ -11,8 +11,11 @@ func _ready():
 func _process(delta):
 	# move left
 	bg.position.x += speed
-	bg.position.y += speed
+	bg.position.y += speed/2
 
 	# reset if moved 64 pixels left
 	if bg.position.x >= start_pos.x + 64:
-		bg.position = start_pos
+		bg.position.x = start_pos.x
+		
+	if bg.position.y >= start_pos.y + 64:
+		bg.position.y = start_pos.y

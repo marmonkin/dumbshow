@@ -14,3 +14,4 @@ collision_layer = 1
 [node name="spawner" parent="." unique_id=2098009316 instance=ExtResource("2_ixkc5")]
 
 [node name="BG" parent="." unique_id=894082075 instance=ExtResource("3_mf5vj")]
+visible = false

@@ -2,12 +2,25 @@ extends CharacterBody2D
 
 @onready var playernode: CharacterBody2D = %player_guy
 
+@onready var sprite: Sprite2D = $Sprite2D
+
+var frame_index := 0
+var frame_timer := 0.0
+var frame_speed := 0.1
+
 var knockback: Vector2 = Vector2.ZERO
 var knockback_timer: float = 0.0
 var max_speed: float = 400.0
 var acceleration: float = 500.0
 var friction: float = 200.0
 var rotdir: float = 1
+
+func _process(delta: float) -> void:
+	frame_timer += delta
+	if frame_timer >= frame_speed:
+		frame_timer = 0
+		frame_index = (frame_index + 1) % sprite.hframes  # loop through frames
+		sprite.frame = frame_index
 
 func _physics_process(delta: float) -> void:
 	if playernode != null:

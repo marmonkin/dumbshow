@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cuevp8ji8x6nn"]
+
+[ext_resource type="PackedScene" uid="uid://dgeuehbwv8try" path="res://objects/bg.tscn" id="1_4nh4k"]
+
+[node name="Gameover" type="Node2D" unique_id=309443611]
+
+[node name="Node" type="Node" parent="." unique_id=676801771]
+
+[node name="BG" parent="." unique_id=894082075 instance=ExtResource("1_4nh4k")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-64, -64)

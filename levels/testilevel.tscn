@@ -11,7 +11,7 @@
 [ext_resource type="Resource" uid="uid://dumoaubhxm8mm" path="res://items/box.tres" id="8_sxrkk"]
 [ext_resource type="PackedScene" uid="uid://dyvtpw5sjc3n1" path="res://objects/mask.tscn" id="9_6m24s"]
 [ext_resource type="PackedScene" uid="uid://244qt8j3nmbj" path="res://item_spawn.tscn" id="11_fpbc5"]
-[ext_resource type="PackedScene" path="res://objects/bg.tscn" id="12_845w3"]
+[ext_resource type="PackedScene" uid="uid://dgeuehbwv8try" path="res://objects/bg.tscn" id="12_845w3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pnrsp"]
 texture = ExtResource("1_swj5i")
@@ -127,5 +127,6 @@ position = Vector2(162, 137)
 position = Vector2(160, 120)
 
 [node name="BG" parent="." unique_id=894082075 instance=ExtResource("12_845w3")]
+modulate = Color(0, 0.25882354, 0.4117647, 1)
 z_index = -10
 position = Vector2(-64, -64)

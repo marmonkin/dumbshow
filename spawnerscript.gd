@@ -13,9 +13,6 @@ var spawn_positions = [
 var spawn_cooldown := 0.0
 var spawn_delay := 0.1
 
-func _ready() -> void:
-	pass
-
 func _process(delta: float) -> void:
 	spawn_cooldown -= delta
 	
