@@ -48,3 +48,12 @@ func die() -> void:
 	blood.emitting = true
 
 	queue_free()
+	
+func stun():
+	velocity = Vector2.ZERO
+	wait_timer = randf_range(.8, 1.5)
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.is_in_group("box") and body != self:
+		body.queue_free()

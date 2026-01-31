@@ -32,6 +32,8 @@ player=""
 mask=""
 push="ninja"
 wall=""
+stun=""
+enemy=""
 
 [input]
 

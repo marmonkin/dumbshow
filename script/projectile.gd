@@ -19,7 +19,9 @@ func _on_body_entered(body):
 	# do shit here
 	if !body.is_in_group("mask"):
 		queue_free()
-
+		
+	if body.is_in_group("stun"):
+		body.stun()
 
 func _on_timer_timeout() -> void:
 	queue_free()
