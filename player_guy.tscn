@@ -4,8 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://c4wpqg6e2nhpt" path="res://sprites/spr_player.png" id="2_lc21g"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lc21g"]
-radius = 3.0
-height = 12.0
+radius = 2.0
+height = 8.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lc21g"]
+size = Vector2(4.25, 8)
 
 [node name="player_guy" type="CharacterBody2D" unique_id=1898993827 groups=["player"]]
 collision_mask = 3
@@ -16,9 +19,19 @@ script = ExtResource("1_3xnxb")
 texture = ExtResource("2_lc21g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1972641379]
+position = Vector2(0.5, 0)
+scale = Vector2(0.75, 0.75)
 shape = SubResource("CapsuleShape2D_lc21g")
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=2022276958]
 position = Vector2(0, -9)
 
 [node name="Sprite2D" type="Sprite2D" parent="Marker2D" unique_id=2053022181]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=657087741]
+position = Vector2(0.5, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=689905359]
+shape = SubResource("RectangleShape2D_lc21g")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
