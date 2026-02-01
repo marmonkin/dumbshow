@@ -105,7 +105,7 @@ hframes = 7
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=203573338]
 shape = SubResource("CircleShape2D_ktl0d")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=158643389]
+[node name="Area2D" type="Area2D" parent="." unique_id=158643389 groups=["killplayer"]]
 collision_layer = 7
 collision_mask = 7
 

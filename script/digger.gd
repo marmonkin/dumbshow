@@ -19,21 +19,24 @@ enum MoleState {
 
 const CPU_PARTICLES_2D = preload("uid://dy7883pg6rnxb")
 
-var wait_timer := 0.0
+var center
+var wait_timer = 0.0
 var state: MoleState = MoleState.SURFACED
 var stunned = false
 
 func _ready():
+	center = get_viewport().get_camera_2d().get_screen_center_position()
 	randomize()
 	set_state(MoleState.SURFACED)
 		
 
 func relocate():
+	
 	var offset = Vector2(
-		randf_range(-spawn_range.x / 2, spawn_range.x / 2),
-		randf_range(-spawn_range.y / 2, spawn_range.y / 2)
+		randf_range(-spawn_range.x * 0.5, spawn_range.x * 0.5),
+		randf_range(-spawn_range.y * 0.5, spawn_range.y * 0.5)
 	)
-	global_position = offset
+	global_position = center + offset
 	
 
 func set_state(new_state: MoleState):

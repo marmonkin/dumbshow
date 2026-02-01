@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2woepee2ddns" path="res://script/mask.gd" id="1_2ijcx"]
 [ext_resource type="Texture2D" uid="uid://dwahgx1a201aa" path="res://sprites/spr_mask_strip6.png" id="2_2ijcx"]
-[ext_resource type="AudioStream" uid="uid://b8qpkw4b8wewb" path="res://sound/wallbang.wav" id="3_bvty1"]
+[ext_resource type="AudioStream" uid="uid://c3r53bp0en13w" path="res://sound/newwallbang.wav" id="3_ev0xq"]
 [ext_resource type="AudioStream" uid="uid://cixh7t02s5cnr" path="res://sound/enemyhit.wav" id="4_ev0xq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bvty1"]
@@ -32,7 +32,7 @@ shape = SubResource("CircleShape2D_2ijcx")
 
 [node name="wallbang" type="AudioStreamPlayer2D" parent="." unique_id=1564327925]
 unique_name_in_owner = true
-stream = ExtResource("3_bvty1")
+stream = ExtResource("3_ev0xq")
 
 [node name="enemyhit" type="AudioStreamPlayer2D" parent="." unique_id=345106123]
 unique_name_in_owner = true
