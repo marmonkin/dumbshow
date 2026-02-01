@@ -15,6 +15,8 @@ enum MoleState {
 @onready var area: CollisionShape2D = $Area2D/CollisionShape2D
 @onready var timer: Timer = $Timer
 
+@onready var animation = $AnimationPlayer
+
 const CPU_PARTICLES_2D = preload("uid://dy7883pg6rnxb")
 
 var wait_timer := 0.0
@@ -38,11 +40,13 @@ func set_state(new_state: MoleState):
 	
 	match state:
 		MoleState.SURFACED:
+			animation.play("surface")
 			collider.disabled = false
 			area.disabled = false
 			timer.start(2.)
 		
 		MoleState.DIGGING:
+			animation.play("down")
 			collider.disabled = true
 			area.disabled = true
 			# dig animation
@@ -51,8 +55,10 @@ func set_state(new_state: MoleState):
 		MoleState.HIDDEN:
 			relocate()
 			timer.start(1.5)
+		
 		MoleState.EMERGING:
 			# emerge animation
+			animation.play("up")
 			timer.start(.8)
 
 func die() -> void:
