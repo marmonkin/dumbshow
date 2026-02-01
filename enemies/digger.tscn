@@ -1,17 +1,104 @@
 [gd_scene format=3 uid="uid://bknb5xyorjq8h"]
 
 [ext_resource type="Script" uid="uid://boidmqmxcgbyc" path="res://script/digger.gd" id="1_ktl0d"]
-[ext_resource type="Texture2D" uid="uid://b3r23br0t1b5w" path="res://sprites/spr_diglett.png" id="1_vle3j"]
+[ext_resource type="Texture2D" uid="uid://yqmse3kr8n00" path="res://sprites/spr_diglett_strip7.png" id="2_ktl0d"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ktl0d"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bcmhi"]
 
+[sub_resource type="Animation" id="Animation_bcmhi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_1xiii"]
+resource_name = "down"
+length = 3.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6]
+}
+
+[sub_resource type="Animation" id="Animation_c1q5t"]
+resource_name = "still"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [5]
+}
+
+[sub_resource type="Animation" id="Animation_mtx5n"]
+resource_name = "surface"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_ktl0d"]
+resource_name = "up"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [5, 4, 3, 2, 1, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c1q5t"]
+_data = {
+&"RESET": SubResource("Animation_bcmhi"),
+&"down": SubResource("Animation_1xiii"),
+&"still": SubResource("Animation_c1q5t"),
+&"surface": SubResource("Animation_mtx5n"),
+&"up": SubResource("Animation_ktl0d")
+}
+
 [node name="digger" type="CharacterBody2D" unique_id=1157193915]
 script = ExtResource("1_ktl0d")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=684705768]
-texture = ExtResource("1_vle3j")
+texture = ExtResource("2_ktl0d")
+hframes = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=203573338]
 shape = SubResource("CircleShape2D_ktl0d")
@@ -23,5 +110,8 @@ shape = SubResource("CircleShape2D_bcmhi")
 
 [node name="Timer" type="Timer" parent="." unique_id=1545918204]
 one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2001194263]
+libraries/ = SubResource("AnimationLibrary_c1q5t")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
