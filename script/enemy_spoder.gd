@@ -9,8 +9,8 @@ extends CharacterBody2D
 const CPU_PARTICLES_2D = preload("uid://dy7883pg6rnxb")
 
 var move_direction := Vector2.ZERO
-var move_timer := .3
-var wait_timer := 0.0
+var move_timer := 0.
+var wait_timer := 1.0
 
 func _physics_process(delta: float) -> void:
 	if not player:

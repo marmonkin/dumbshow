@@ -12,6 +12,7 @@ func initialize(dir: Vector2, data: ThrowableItem):
 
 func _physics_process(delta):
 	position += direction * item_data.speed * delta
+	$Sprite2D.rotation += TAU * 5. * delta
 
 func _ready():
 	pass
