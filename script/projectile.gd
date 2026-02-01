@@ -38,3 +38,8 @@ func die() -> void:
 
 func _on_timer_timeout() -> void:
 	queue_free()
+
+
+func _on_projectile_body_entered(body: Node2D) -> void:
+	if body.is_in_group("wall"):
+		die()
