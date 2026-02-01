@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://18lq0fmljcmi" path="res://player_guy.tscn" id="3_0e24y"]
 [ext_resource type="PackedScene" uid="uid://dgeuehbwv8try" path="res://objects/bg.tscn" id="3_mf5vj"]
-[ext_resource type="PackedScene" uid="uid://c4k0tnpartbd" path="res://enemies/batter.tscn" id="4_0e24y"]
 [ext_resource type="PackedScene" uid="uid://bknb5xyorjq8h" path="res://enemies/digger.tscn" id="4_ujdue"]
 
 [node name="Root" type="Node2D" unique_id=669080154]
@@ -15,6 +14,3 @@ position = Vector2(146, 138)
 
 [node name="digger" parent="." unique_id=1157193915 instance=ExtResource("4_ujdue")]
 position = Vector2(199, 120)
-
-[node name="batter" parent="." unique_id=1478967856 instance=ExtResource("4_0e24y")]
-position = Vector2(88, 102)

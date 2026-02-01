@@ -4,10 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://bpy0j5dw2xvom" path="res://sprites/spr_bat_strip2.png" id="1_mwye5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ktl0d"]
-radius = 4.0
+radius = 3.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bcmhi"]
-radius = 8.0
+radius = 4.0
 
 [node name="batter" type="CharacterBody2D" unique_id=1157193915 groups=["enemy", "push", "stun"]]
 collision_layer = 2
