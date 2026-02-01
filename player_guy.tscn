@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://jjyv16k10xlf" path="res://script/player_guy.gd" id="1_3xnxb"]
 [ext_resource type="Texture2D" uid="uid://c4wpqg6e2nhpt" path="res://sprites/spr_player.png" id="2_lc21g"]
+[ext_resource type="AudioStream" uid="uid://cenjnbwmtdflb" path="res://sound/pickup.wav" id="3_xvy7d"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lc21g"]
 radius = 2.0
@@ -33,5 +34,8 @@ position = Vector2(0.5, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=689905359]
 shape = SubResource("RectangleShape2D_lc21g")
+
+[node name="pickupsound" type="AudioStreamPlayer2D" parent="." unique_id=46873816]
+stream = ExtResource("3_xvy7d")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

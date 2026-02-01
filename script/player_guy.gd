@@ -22,6 +22,7 @@ func _input(event: InputEvent) -> void:
 		throw_shit()
 
 func pickup_shit(item: ThrowableItem):
+	$pickupsound.play()
 	held_item = item
 	item_sprite.texture = item.sprite
 	carry = true

@@ -56,6 +56,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		var lerpdir = lerp(dir, playerdir, .5).normalized()
 		#var distance = global_position.distance_to(playernode.global_position) #was player.globalpos
 		apply_knockback(lerpdir, 100, .5)
+		%wallbang.play()
 		$"../Camera2D".shake(1)
 		Hitstop.freeze_frames(5)
 	else:
@@ -64,6 +65,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		apply_knockback(dir, distance*4, .25)
 
 	if body.has_method("die"):
+		%enemyhit.play()
 		body.die()
 		$"../Camera2D".shake(2)
 		Hitstop.freeze_frames(10)

@@ -19,11 +19,20 @@ func _ready():
 	#body_entered.connect(_on_body_entered)
 
 func die() -> void:
+	var audio = %boxbreak
+	remove_child(audio)
+	get_tree().current_scene.add_child(audio)
+
+	audio.global_position = global_position
+	audio.play()
+
+	audio.finished.connect(audio.queue_free)
+	
 	var splint = BOX_SPLINT.instantiate()
 	splint.global_position = global_position
-	
 	get_tree().current_scene.add_child(splint)
 	splint.emitting = true
+	
 	queue_free()
 
 
