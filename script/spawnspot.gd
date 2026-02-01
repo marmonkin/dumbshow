@@ -1,8 +1,20 @@
 extends Node2D
 
 var ENEMY_SPODER = preload("uid://braiij1uykq53")
+var ENEMY_BAT = preload("uid://c4k0tnpartbd")
+var ENEMY_DIGGER = preload("uid://bknb5xyorjq8h")
+
+var enemies = [
+	ENEMY_SPODER,
+	ENEMY_BAT,
+	ENEMY_DIGGER
+	]
+
+var enemy_instance
 
 func _ready() -> void:
+	randomize()
+	var rannum = randi_range(0,2)
 	modulate.a = 0.0
 	scale = Vector2.ZERO
 	add_to_group("spawnspot")
@@ -15,7 +27,7 @@ func _ready() -> void:
 	await get_tree().create_timer(1).timeout
 	
 	#SPAWN ENEMY
-	var enemy_instance = ENEMY_SPODER.instantiate()
+	enemy_instance = enemies[rannum].instantiate()
 	enemy_instance.global_position = global_position
 	get_tree().current_scene.add_child(enemy_instance)
 	

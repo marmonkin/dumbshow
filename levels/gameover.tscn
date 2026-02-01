@@ -3,6 +3,12 @@
 [ext_resource type="PackedScene" uid="uid://dgeuehbwv8try" path="res://objects/bg.tscn" id="1_acgp2"]
 [ext_resource type="Script" uid="uid://bkm04r2sutkbe" path="res://levels/key_r.gd" id="2_owe7a"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_g5c8h"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_owe7a"]
+font_size = 8
+font_color = Color(1, 0, 0, 1)
+
 [node name="Gameover" type="Node2D" unique_id=309443611]
 
 [node name="BG" parent="." unique_id=894082075 instance=ExtResource("1_acgp2")]
@@ -10,18 +16,29 @@ modulate = Color(0.22150803, 0.14760238, 0.24464041, 1)
 position = Vector2(-64, -64)
 
 [node name="Label" type="Label" parent="." unique_id=1112663685]
+offset_top = -15.0
 offset_right = 320.0
-offset_bottom = 240.0
+offset_bottom = 225.0
 text = "YOU'RE DEAD AS FUCK"
+label_settings = SubResource("LabelSettings_g5c8h")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="." unique_id=1514736351]
-offset_top = 128.0
-offset_right = 619.0
-offset_bottom = 151.0
-text = "LMAOOOOOOOOOOOOOOOOOOOOOOOOO"
+offset_left = -134.0
+offset_top = 120.0
+offset_right = 485.0
+offset_bottom = 136.0
+text = "LMAOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO"
+label_settings = SubResource("LabelSettings_owe7a")
 horizontal_alignment = 1
 
 [node name="rkey" type="Node2D" parent="." unique_id=933985024]
 script = ExtResource("2_owe7a")
+
+[node name="Label3" type="Label" parent="." unique_id=946988170]
+offset_top = 133.0
+offset_right = 320.0
+offset_bottom = 163.0
+text = "PRESS \"R\" TO RESTART"
+horizontal_alignment = 1

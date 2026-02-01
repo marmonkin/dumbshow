@@ -25,7 +25,7 @@ func _process(delta: float) -> void:
 		frame_timer += delta
 		if frame_timer >= frame_speed:
 			frame_timer = 0
-			frame_index = (frame_index + 1) % sprite.hframes  # loop through frames
+			frame_index = (frame_index + 1) % sprite.hframes 
 			sprite.frame = frame_index
 
 func _physics_process(delta: float) -> void:
