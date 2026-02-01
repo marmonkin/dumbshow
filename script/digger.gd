@@ -56,6 +56,8 @@ func set_state(new_state: MoleState):
 			timer.start(.8)
 		
 		MoleState.HIDDEN:
+			#animation.play("still")
+			animation.play("nothing")
 			relocate()
 			timer.start(1.5)
 		
