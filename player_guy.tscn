@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://18lq0fmljcmi"]
 
 [ext_resource type="Script" uid="uid://jjyv16k10xlf" path="res://script/player_guy.gd" id="1_3xnxb"]
-[ext_resource type="Texture2D" uid="uid://c4wpqg6e2nhpt" path="res://sprites/spr_player.png" id="2_lc21g"]
+[ext_resource type="Texture2D" uid="uid://c1n8h8o7agy1v" path="res://sprites/spr_playerwalk_strip2.png" id="2_lc21g"]
+[ext_resource type="Texture2D" uid="uid://dff351ec34s2x" path="res://sprites/spr_playersquish_strip2.png" id="3_xvy7d"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lc21g"]
 radius = 2.0
@@ -10,13 +11,96 @@ height = 8.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lc21g"]
 size = Vector2(4.25, 8)
 
+[sub_resource type="Animation" id="Animation_xvy7d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("normalwalk2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("carrywalk2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_j50dk"]
+resource_name = "carrywalk"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("normalwalk2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+
+[sub_resource type="Animation" id="Animation_q14ll"]
+resource_name = "carrywalk2"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("carrywalk2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_8tsi1"]
+resource_name = "walk"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("normalwalk2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.099999994),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q14ll"]
+_data = {
+&"RESET": SubResource("Animation_xvy7d"),
+&"carrywalk": SubResource("Animation_j50dk"),
+&"carrywalk2": SubResource("Animation_q14ll"),
+&"walk": SubResource("Animation_8tsi1")
+}
+
 [node name="player_guy" type="CharacterBody2D" unique_id=1898993827 groups=["player"]]
 collision_mask = 3
 motion_mode = 1
 script = ExtResource("1_3xnxb")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=847248945]
+[node name="normalwalk2D" type="Sprite2D" parent="." unique_id=847248945]
 texture = ExtResource("2_lc21g")
+hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1972641379]
 position = Vector2(0.5, 0)
@@ -33,5 +117,14 @@ position = Vector2(0.5, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=689905359]
 shape = SubResource("RectangleShape2D_lc21g")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1003252463]
+libraries/ = SubResource("AnimationLibrary_q14ll")
+speed_scale = 2.0
+
+[node name="carrywalk2D" type="Sprite2D" parent="." unique_id=1313554698]
+visible = false
+texture = ExtResource("3_xvy7d")
+hframes = 2
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
