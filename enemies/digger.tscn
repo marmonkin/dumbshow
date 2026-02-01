@@ -4,9 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://yqmse3kr8n00" path="res://sprites/spr_diglett_strip7.png" id="2_ktl0d"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ktl0d"]
-radius = 4.1231055
+radius = 3.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bcmhi"]
+radius = 5.0
 
 [sub_resource type="Animation" id="Animation_bcmhi"]
 length = 0.001
