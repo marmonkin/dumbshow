@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://di66qoy6qts7b" path="res://objects/spawner.tscn" id="11_50xcf"]
 [ext_resource type="PackedScene" uid="uid://244qt8j3nmbj" path="res://item_spawn.tscn" id="11_a3kxr"]
 [ext_resource type="PackedScene" uid="uid://dgeuehbwv8try" path="res://objects/bg.tscn" id="12_lys4r"]
+[ext_resource type="Script" uid="uid://b2chpqnjt6g1a" path="res://levels/timer.gd" id="12_ohwjp"]
+[ext_resource type="PackedScene" uid="uid://5e5p8lkedro8" path="res://objects/global.tscn" id="13_7u5sd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pnrsp"]
 texture = ExtResource("1_ohwjp")
@@ -84,6 +86,9 @@ sources/0 = SubResource("TileSetAtlasSource_pnrsp")
 sources/1 = SubResource("TileSetAtlasSource_qbg1g")
 sources/2 = SubResource("TileSetAtlasSource_xh0bt")
 
+[sub_resource type="LabelSettings" id="LabelSettings_7u5sd"]
+font_size = 12
+
 [node name="Testilevel" type="Node2D" unique_id=1571799838]
 
 [node name="tile" type="Node2D" parent="." unique_id=1764573200]
@@ -127,3 +132,18 @@ z_index = -10
 position = Vector2(-64, -64)
 
 [node name="spawner" parent="." unique_id=2098009316 instance=ExtResource("11_50xcf")]
+
+[node name="TimerLabel" type="Node2D" parent="." unique_id=1161755564]
+position = Vector2(160, 83)
+script = ExtResource("12_ohwjp")
+
+[node name="Label" type="Label" parent="TimerLabel" unique_id=1255768149]
+offset_left = -20.0
+offset_top = -67.0
+offset_right = 21.0
+offset_bottom = -42.0
+text = "0"
+label_settings = SubResource("LabelSettings_7u5sd")
+horizontal_alignment = 1
+
+[node name="Global" parent="." unique_id=165133203 instance=ExtResource("13_7u5sd")]

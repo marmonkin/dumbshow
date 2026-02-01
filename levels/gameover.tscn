@@ -2,12 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://dgeuehbwv8try" path="res://objects/bg.tscn" id="1_acgp2"]
 [ext_resource type="Script" uid="uid://bkm04r2sutkbe" path="res://levels/key_r.gd" id="2_owe7a"]
+[ext_resource type="Script" uid="uid://cyewki35ucxfc" path="res://levels/go_label.gd" id="3_g5c8h"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_g5c8h"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_owe7a"]
-font_size = 8
-font_color = Color(1, 0, 0, 1)
 
 [node name="Gameover" type="Node2D" unique_id=309443611]
 
@@ -24,15 +21,6 @@ label_settings = SubResource("LabelSettings_g5c8h")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="." unique_id=1514736351]
-offset_left = -134.0
-offset_top = 120.0
-offset_right = 485.0
-offset_bottom = 136.0
-text = "LMAOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO"
-label_settings = SubResource("LabelSettings_owe7a")
-horizontal_alignment = 1
-
 [node name="rkey" type="Node2D" parent="." unique_id=933985024]
 script = ExtResource("2_owe7a")
 
@@ -42,3 +30,9 @@ offset_right = 320.0
 offset_bottom = 163.0
 text = "PRESS \"R\" TO RESTART"
 horizontal_alignment = 1
+
+[node name="GOLabel" type="Label" parent="." unique_id=1241780265]
+offset_right = 320.0
+offset_bottom = 23.0
+horizontal_alignment = 1
+script = ExtResource("3_g5c8h")

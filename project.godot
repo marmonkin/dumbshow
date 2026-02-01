@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Hitstop="*uid://d2v7vln76mbb4"
+Global="*uid://5e5p8lkedro8"
 
 [display]
 
