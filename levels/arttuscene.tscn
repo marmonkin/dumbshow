@@ -1,17 +1,16 @@
 [gd_scene format=3 uid="uid://ps88x1gst86f"]
 
-[ext_resource type="PackedScene" uid="uid://dyvtpw5sjc3n1" path="res://objects/mask.tscn" id="1_mf5vj"]
-[ext_resource type="PackedScene" uid="uid://di66qoy6qts7b" path="res://objects/spawner.tscn" id="2_ixkc5"]
+[ext_resource type="PackedScene" uid="uid://18lq0fmljcmi" path="res://player_guy.tscn" id="3_0e24y"]
 [ext_resource type="PackedScene" uid="uid://dgeuehbwv8try" path="res://objects/bg.tscn" id="3_mf5vj"]
+[ext_resource type="PackedScene" uid="uid://bknb5xyorjq8h" path="res://enemies/digger.tscn" id="4_ujdue"]
 
 [node name="Root" type="Node2D" unique_id=669080154]
 
-[node name="Mask" parent="." unique_id=57425730 instance=ExtResource("1_mf5vj")]
-texture_filter = 1
-position = Vector2(187, 112)
-collision_layer = 1
-
-[node name="spawner" parent="." unique_id=2098009316 instance=ExtResource("2_ixkc5")]
-
 [node name="BG" parent="." unique_id=894082075 instance=ExtResource("3_mf5vj")]
 visible = false
+
+[node name="player_guy" parent="." unique_id=1898993827 instance=ExtResource("3_0e24y")]
+position = Vector2(146, 138)
+
+[node name="digger" parent="." unique_id=1157193915 instance=ExtResource("4_ujdue")]
+position = Vector2(199, 120)

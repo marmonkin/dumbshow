@@ -7,13 +7,31 @@ extends CharacterBody2D
 var gameover: PackedScene = preload("res://levels/gameover.tscn")
 #const gameover = preload("uid://cuevp8ji8x6nn")
 
+@onready var animation = $AnimationPlayer
+@onready var normalwalk2D: Sprite2D = $normalwalk2D
+@onready var carrywalk2D: Sprite2D = $carrywalk2D
+
 const SPEED = 100.0
 
 var carry = false
 var held_item: ThrowableItem = null
 
+func _ready() -> void:
+	normalwalk2D.visible = true
+	carrywalk2D.visible = false
+
 func _physics_process(delta: float) -> void:
 	var direction = Input.get_vector("left", "right", "up", "down")
+	
+	if direction != Vector2.ZERO && !carry:
+		animation.play("walk")
+		normalwalk2D.visible = true
+		carrywalk2D.visible = false
+	elif direction != Vector2.ZERO && carry:
+		animation.play("carrywalk2")
+		normalwalk2D.visible = false
+		carrywalk2D.visible = true
+		
 	velocity = direction * SPEED
 	move_and_slide()
 	
@@ -42,4 +60,3 @@ func do_gameover():
 func _on_area_2d_area_entered(area: Node2D) -> void:
 	if area.is_in_group("killplayer"):
 		call_deferred("do_gameover")
-		print("AAAAAAAAAAAA")

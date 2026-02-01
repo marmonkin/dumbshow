@@ -1,12 +1,17 @@
 extends CharacterBody2D
 
-
 @export var SPEED = 150.0
 @export var MAX_ANGLE = 45.
 
 @onready var player := get_tree().get_first_node_in_group("player") as Node2D
 
+@onready var sprite: Sprite2D = $Sprite2D
+
 const CPU_PARTICLES_2D = preload("uid://dy7883pg6rnxb")
+
+var frame_index := 0
+var frame_timer := 0.0
+var frame_speed := 0.1
 
 var move_direction := Vector2.ZERO
 var move_timer := 0.
@@ -14,6 +19,14 @@ var wait_timer := 1.0
 
 func _ready():
 	randomize()
+
+func _process(delta: float) -> void:
+	if velocity != Vector2.ZERO:
+		frame_timer += delta
+		if frame_timer >= frame_speed:
+			frame_timer = 0
+			frame_index = (frame_index + 1) % sprite.hframes  # loop through frames
+			sprite.frame = frame_index
 
 func _physics_process(delta: float) -> void:
 	if not player:
