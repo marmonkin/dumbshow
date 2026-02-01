@@ -26,9 +26,9 @@ func _physics_process(delta: float) -> void:
 		# Stop and wait
 		velocity = Vector2.ZERO
 		wait_timer -= delta
-
-		if wait_timer <= 0.0:
-			start_move()
+	
+	if wait_timer <= 0.0:
+		start_move()
 
 func start_move() -> void:
 	var to_player = (player.global_position - global_position).normalized()

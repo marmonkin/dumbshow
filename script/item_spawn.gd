@@ -2,7 +2,7 @@ extends Node2D
 
 
 @export var items : Array [Resource]
-@export var amount = 0
+@export var amount = 5
 @export var spawn_range: Vector2 = Vector2(200, 200)
 
 @onready var pickupable: PackedScene = preload("uid://dm1fmidfi4qky")

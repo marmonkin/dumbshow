@@ -46,9 +46,9 @@ func apply_knockback(direction: Vector2, force: float, duration: float) -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("push"):
-		
-		$"../Camera2D".shake(2)
-		Hitstop.freeze_frames(10)
+		pass
+		#$"../Camera2D".shake(2)
+		#Hitstop.freeze_frames(5)
 		
 	if body.is_in_group("wall"):
 		var dir = (Vector2(160,120) - global_position).normalized()
@@ -56,6 +56,8 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		var lerpdir = lerp(dir, playerdir, .5).normalized()
 		#var distance = global_position.distance_to(playernode.global_position) #was player.globalpos
 		apply_knockback(lerpdir, 100, .5)
+		$"../Camera2D".shake(1)
+		Hitstop.freeze_frames(5)
 	else:
 		var dir = (global_position - body.global_position).normalized()
 		var distance = global_position.distance_to(playernode.global_position) #was player.globalpos
@@ -63,8 +65,11 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 	if body.has_method("die"):
 		body.die()
+		$"../Camera2D".shake(2)
+		Hitstop.freeze_frames(10)
 	elif body.is_in_group("box"):
 		body.queue_free()
+		$"../Camera2D".shake(1)
 
 	if rotdir == 1:
 		rotdir = -1
