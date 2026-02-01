@@ -10,7 +10,7 @@ enum MoleState {
 
 @export var spawn_range: Vector2 = Vector2(200, 200)
 
-@onready var player: Node2D = get_tree().get_nodes_in_group("player")[0]
+@onready var player := get_tree().get_first_node_in_group("player") as Node2D
 @onready var collider: CollisionShape2D = $CollisionShape2D
 @onready var area: CollisionShape2D = $Area2D/CollisionShape2D
 @onready var timer: Timer = $Timer
@@ -21,12 +21,12 @@ const CPU_PARTICLES_2D = preload("uid://dy7883pg6rnxb")
 
 var wait_timer := 0.0
 var state: MoleState = MoleState.SURFACED
+var stunned = false
 
-
-func _physics_process(delta: float) -> void:
-	if not player:
-		return
-	
+func _ready():
+	randomize()
+	set_state(MoleState.SURFACED)
+		
 
 func relocate():
 	var offset = Vector2(
@@ -34,6 +34,7 @@ func relocate():
 		randf_range(-spawn_range.y / 2, spawn_range.y / 2)
 	)
 	global_position = offset
+	
 
 func set_state(new_state: MoleState):
 	state = new_state
@@ -49,7 +50,6 @@ func set_state(new_state: MoleState):
 			animation.play("down")
 			collider.disabled = true
 			area.disabled = true
-			# dig animation
 			timer.start(.8)
 		
 		MoleState.HIDDEN:
@@ -61,6 +61,7 @@ func set_state(new_state: MoleState):
 			animation.play("up")
 			timer.start(.8)
 
+
 func die() -> void:
 	var blood = CPU_PARTICLES_2D.instantiate()
 	blood.global_position = global_position
@@ -69,7 +70,9 @@ func die() -> void:
 	blood.emitting = true
 	queue_free()
 	
+	
 func stun():
+	stunned = true
 	timer.start(randf_range(2., 2.5))
 
 
@@ -80,15 +83,21 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 
 func _on_timer_timeout() -> void:
+	if stunned:
+		stunned = false
+		set_state(MoleState.SURFACED)
+		return
+	
+	
 	match state:
 		MoleState.SURFACED:
 			set_state(MoleState.DIGGING)
-
+	
 		MoleState.DIGGING:
 			set_state(MoleState.HIDDEN)
-
+	
 		MoleState.HIDDEN:
 			set_state(MoleState.EMERGING)
-
+	
 		MoleState.EMERGING:
 			set_state(MoleState.SURFACED)

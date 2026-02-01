@@ -4,13 +4,16 @@ extends CharacterBody2D
 @export var SPEED = 150.0
 @export var MAX_ANGLE = 45.
 
-@onready var player: Node2D = get_tree().get_nodes_in_group("player")[0]
+@onready var player := get_tree().get_first_node_in_group("player") as Node2D
 
 const CPU_PARTICLES_2D = preload("uid://dy7883pg6rnxb")
 
 var move_direction := Vector2.ZERO
 var move_timer := 0.
 var wait_timer := 1.0
+
+func _ready():
+	randomize()
 
 func _physics_process(delta: float) -> void:
 	if not player:

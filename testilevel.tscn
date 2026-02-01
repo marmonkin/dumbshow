@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://244qt8j3nmbj" path="res://item_spawn.tscn" id="11_fpbc5"]
 [ext_resource type="PackedScene" uid="uid://dgeuehbwv8try" path="res://objects/bg.tscn" id="12_845w3"]
 [ext_resource type="PackedScene" uid="uid://c4k0tnpartbd" path="res://enemies/batter.tscn" id="13_gvc05"]
+[ext_resource type="PackedScene" uid="uid://bknb5xyorjq8h" path="res://enemies/digger.tscn" id="13_h8soy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pnrsp"]
 texture = ExtResource("1_swj5i")
@@ -128,3 +129,6 @@ position = Vector2(-64, -64)
 
 [node name="batter" parent="." unique_id=1157193915 instance=ExtResource("13_gvc05")]
 position = Vector2(119, 53)
+
+[node name="digger" parent="." unique_id=1219602946 instance=ExtResource("13_h8soy")]
+position = Vector2(212, 85)

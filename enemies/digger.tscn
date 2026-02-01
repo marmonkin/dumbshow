@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://yqmse3kr8n00" path="res://sprites/spr_diglett_strip7.png" id="2_ktl0d"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ktl0d"]
+radius = 4.1231055
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bcmhi"]
 
@@ -93,7 +94,8 @@ _data = {
 &"up": SubResource("Animation_ktl0d")
 }
 
-[node name="digger" type="CharacterBody2D" unique_id=1157193915]
+[node name="digger" type="CharacterBody2D" unique_id=1157193915 groups=["enemy", "push", "stun"]]
+collision_layer = 2
 script = ExtResource("1_ktl0d")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=684705768]
@@ -104,6 +106,8 @@ hframes = 7
 shape = SubResource("CircleShape2D_ktl0d")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=158643389]
+collision_layer = 7
+collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=159364345]
 shape = SubResource("CircleShape2D_bcmhi")
@@ -114,4 +118,5 @@ one_shot = true
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2001194263]
 libraries/ = SubResource("AnimationLibrary_c1q5t")
 
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
