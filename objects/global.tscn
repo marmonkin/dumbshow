@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://5e5p8lkedro8"]
+
+[ext_resource type="Script" uid="uid://bxkm5d0fbbhuw" path="res://particle/Global.gd" id="1_87sdn"]
+
+[node name="Global" type="Node" unique_id=165133203]
+script = ExtResource("1_87sdn")
